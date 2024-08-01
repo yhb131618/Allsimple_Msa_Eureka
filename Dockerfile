@@ -11,5 +11,5 @@ FROM openjdk:17-jdk-alpine
 
 COPY --from=builder /app/build/libs/*.jar app.jar
 
-EXPOSE 8080
+EXPOSE 8008
 ENTRYPOINT ["java", "-jar", "app.jar"]
