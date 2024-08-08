@@ -1,13 +1,16 @@
 spring:
   application:
     name: eureka-server
-  cloud:
-    config:
-      discovery:
-        enabled: true
-        service-id: config-server
-      import: optional:configserver:  # 이 줄을 추가합니다
-  eureka:
-    client:
-      registerWithEureka: false
-      fetchRegistry: false
+  config:
+    import: "configserver:http://config-server:8888"
+    profile: default
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
