@@ -18,8 +18,9 @@ repositories {
 }
 
 ext {
-	set('springCloudVersion', "2023.0.3")
+	set('springCloudVersion', "2023.0.3")  
 }
+
 
 dependencies {
 	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server'
@@ -27,10 +28,8 @@ dependencies {
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
     implementation 'org.springframework.cloud:spring-cloud-config-client'
 	implementation 'org.springframework.cloud:spring-cloud-starter-bootstrap'
-	// implementation 'org.springframework.boot:spring-boot-starter-actuator'
-	// implementation 'io.micrometer:micrometer-core:1.12.8' 
-
 }
+
 
 dependencyManagement {
 	imports {
@@ -41,3 +40,4 @@ dependencyManagement {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
