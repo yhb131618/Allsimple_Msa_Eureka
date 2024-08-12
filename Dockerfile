@@ -12,4 +12,4 @@ FROM openjdk:17-jdk-alpine
 COPY --from=builder /app/build/libs/*.jar app.jar
 
 EXPOSE 8761
-ENTRYPOINT ["java", "-jar", "app.jar"]
+CMD ["java", "-XX:-UseContainerSupport", "-jar", "/app.jar"]
